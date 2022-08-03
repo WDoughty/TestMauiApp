@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TestMauiApp.MainPage"
+             xmlns:local="clr-namespace:TestMauiApp">
+    <ContentPage.BindingContext>
+        <local:MainViewModel></local:MainViewModel>
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+
+            <Entry
+                Placeholder="First Name"
+                Text="{Binding FirstName}"
+                WidthRequest="250"
+                />
+
+            <Entry
+                Placeholder="Last Name"
+                Text="{Binding LastName}"
+                WidthRequest="250"
+                />
+
+            <Label
+                Text="{Binding FullName}"
+                HorizontalTextAlignment="Center"
+                />
+
+            <Switch
+                IsToggled="{Binding IsEnabled}"
+                
+                />
+
+            <Button
+                WidthRequest="100"
+                HeightRequest="50"
+                IsEnabled="{Binding IsEnabled}"
+                Command="{Binding SubmitCommand}"
+                />
+
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
